@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7f8c677ae8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="./somenteNumeros.js"></script>
+    <script src="./metragemCubica.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>M³ de Árvores</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #banner {
+            width: 100%;
+            height: 80vh;
+            background: url('./img/avenue-2215317.jpg');
+            background-color: #000;
+            background-size: cover;
+            border-bottom: 10px rgb(118, 168, 230) solid;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: column;
+        } 
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 150px;
+            color: #FFF;
+            font-size: 70px;
+            text-align: center;
+            width: 70vw;
+        }       
+        #arrow-div {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(118, 168, 230);
+            border-radius: 50%;
+            position: relative;
+            top: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+            font-size: 70px;
+        }
+
+        #container {
+            width: 100%;
+            height: 80vh;
+            background: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 40%;
+            height: 65%;
+            background: #FFF;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            -webkit-box-shadow: -1px 13px 26px -3px rgba(0,0,0,0.35);
+            -moz-box-shadow: -1px 13px 26px -3px rgba(0,0,0,0.35);
+            box-shadow: -1px 13px 26px -3px rgba(0,0,0,0.35);
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        input[type=text] {
+            width: 70px;
+            height: 40px;
+            font-size: 20px;
+            margin: 0 10px;
+            border: 0.5px solid rgb(118, 168, 230);
+            padding: 0 5px;
+        }
+        
+        label {
+            font-size: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        button {
+            width: 130px;
+            height: 60px;
+            background: rgb(71, 170, 32);
+            color: #FFF;
+            font-size: 22px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        b {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <div id="banner">
+            <h1>Calcule a metragem cúbica de sua árvore!</h1>
+           
+            <a href="#container">
+                <div id="arrow-div">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </a> 
+        </div>
+        <div id="container">
+            <form>
+                <div class="field">
+                <label for="base">Comprimento da árvore:</label>
+                    <input type="text" id="comprimento" name="comprimento" onkeypress="somenteNumeros(event)" maxlength="6">m
+                </div>
+
+                <div class="field">
+                <label for="base">Diâmetro da base:</label>
+                    <input type="text" id="base" name="base" onkeypress="somenteNumeros(event)" maxlength="4">cm
+                </div>
+
+                <div class="field">
+                <label for="base">Diâmetro do topo:</label>
+                    <input type="text" id="topo" name="topo" onkeypress="somenteNumeros(event)" maxlength="4">cm
+                </div>
+
+                <button type="button" onclick="handleVar()">Calcular</button>
+
+                <b id="respost"></b>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
